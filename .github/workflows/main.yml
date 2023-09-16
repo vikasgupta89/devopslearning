@@ -1,0 +1,41 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - devopslearning
+      - master
+  pull_request:
+    branches:
+      - devopslearning
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Setup a JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '1.8'
+      - name: Build
+        run: mvn clean package
+      - name: Test
+        run: |
+          echo running test
+          mvn test
+    
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Setup a JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '1.8'
+      - name: Build
+        run: mvn clean package
