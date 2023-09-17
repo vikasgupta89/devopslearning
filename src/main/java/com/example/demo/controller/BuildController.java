@@ -10,6 +10,6 @@ public class BuildController {
 
 	@GetMapping("/get")
 	public String getTest() {
-		return "My First Spring Boot Application...";
+		return "My First Spring Boot Application....";
 	}
 }
