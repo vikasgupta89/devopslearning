@@ -12,6 +12,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>SpringBuild</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging> 
 	<name>SpringBuild</name>
 	<description>SpringBuild</description>
 	<properties>
